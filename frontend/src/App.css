@@ -1,0 +1,465 @@
+/* Container Background */
+/* Center Container for Auth Pages */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* Card Container */
+.auth-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(110, 40, 160, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+.auth-card h1 {
+    color: #5b1399;
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+/* Input & Select Styling */
+.auth-card input,
+.auth-card select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #faf5ff;
+    transition: all 0.2s ease-in-out;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+    outline: none;
+    border-color: #6b21a8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+}
+
+/* Primary Action Button */
+.auth-card button[type="submit"] {
+    background-color: #6b21a8;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 6px;
+}
+
+.auth-card button[type="submit"]:hover {
+    background-color: #581c87;
+}
+
+/* Switch Text & Links */
+.switch-text {
+    font-size: 14px;
+    color: #4b5563;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.switch-text .link {
+    color: #6b21a8;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+.switch-text .link:hover {
+    color: #581c87;
+}
+
+/* Alerts */
+.error {
+    color: #dc2626;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 0;
+    text-align: center;
+}
+
+.success {
+    color: #16a34a;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 0;
+    text-align: center;
+}
+
+body {
+    background-color: #f3f0f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+/* White Outer Card Container */
+.products-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 950px;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(110, 40, 160, 0.08);
+}
+
+/* Title Styling */
+.welcome-title {
+    color: #5b1399;
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.title-divider {
+    border: none;
+    border-top: 2px solid #ecdcf8;
+    margin-bottom: 25px;
+}
+
+/* Action Bar */
+.action-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn-purple {
+    background-color: #6b21a8;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-purple:hover {
+    background-color: #581c87;
+}
+
+.btn-logout-outline {
+    background-color: #f8f0fc;
+    color: #6b21a8;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid #d8b4fe;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout-outline:hover {
+    background-color: #f3e8ff;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Table Header */
+.custom-table thead tr {
+    background-color: #6b21a8;
+    color: #ffffff;
+}
+
+.custom-table th {
+    padding: 14px 16px;
+    font-weight: 700;
+}
+
+.custom-table th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.custom-table th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Table Rows & Alternating Colors */
+.custom-table tbody tr {
+    transition: background-color 0.15s;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #faf5ff;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f3e8ff;
+}
+
+.custom-table td {
+    padding: 14px 16px;
+    color: #333333;
+    border-bottom: 1px solid #f0e6f7;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+/* Action Links (Edit / Delete) */
+.action-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.link-edit {
+    background: none;
+    border: none;
+    color: #6b21a8;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+.link-edit:hover {
+    text-decoration: underline;
+}
+
+.link-delete {
+    background: none;
+    border: none;
+    color: #991b1b;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+.link-delete:hover {
+    text-decoration: underline;
+}
+
+/* Form Container Specifics */
+.form-card {
+    max-width: 600px; /* Mas pino ang laki para sa input form */
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Form Group Layout */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a154b;
+}
+
+/* Inputs & Textarea Styling */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #faf5ff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6b21a8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+}
+
+/* Form Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-cancel {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #e5e7eb;
+}
+
+/* Shared Form Card Container */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.products-card.form-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(110, 40, 160, 0.08);
+}
+
+.welcome-title {
+    color: #5b1399;
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.title-divider {
+    border: none;
+    border-top: 2px solid #ecdcf8;
+    margin-bottom: 25px;
+}
+
+/* Vertical Form Group Alignment */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a154b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #faf5ff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6b21a8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+}
+
+/* Form Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-purple {
+    background-color: #6b21a8;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-purple:hover {
+    background-color: #581c87;
+}
+
+.btn-cancel {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #e5e7eb;
+}
