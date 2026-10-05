@@ -4,7 +4,6 @@ import Register from "./components/Register";
 import Products from "./components/Products";
 
 function App() {
-  // Ginawang "login" ang initial state para login page agad ang lalabas
   const [page, setPage] = useState("login");
   const [toast, setToast] = useState({ message: "", show: false });
 
@@ -29,7 +28,7 @@ function App() {
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
-      {/* Floating Toast Notification Pop-up */}
+      {/* Toast Notification Pop-up */}
       {toast.show && (
         <div
           style={{
@@ -50,7 +49,6 @@ function App() {
             borderLeft: "4px solid #10b981",
           }}
         >
-          {/* Green Check Circle */}
           <div
             style={{
               backgroundColor: "#10b981",
@@ -69,12 +67,10 @@ function App() {
             ✓
           </div>
 
-          {/* Toast Text Message */}
           <span style={{ fontSize: "14px", fontWeight: "500", flexGrow: 1 }}>
             {toast.message}
           </span>
 
-          {/* Close (X) Button */}
           <button
             onClick={() => setToast({ ...toast, show: false })}
             style={{
@@ -92,7 +88,7 @@ function App() {
         </div>
       )}
 
-      {/* Pages */}
+      {/* Navigation Pages */}
       {page === "register" && (
         <Register goLogin={() => setPage("login")} />
       )}
@@ -105,7 +101,10 @@ function App() {
       )}
 
       {page === "products" && (
-        <Products onLogout={handleLogout} />
+        <Products 
+          onLogout={handleLogout} 
+          showToast={showToastMessage} 
+        />
       )}
     </div>
   );

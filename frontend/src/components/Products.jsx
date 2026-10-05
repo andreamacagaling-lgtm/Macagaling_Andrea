@@ -3,7 +3,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct } from "../api
 import AddProduct from "./AddProduct";
 import EditProduct from "./EditProduct";
 
-function Products({ onLogout }) {
+function Products({ onLogout, showToast }) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -20,7 +20,6 @@ function Products({ onLogout }) {
             const response = await getProducts();
             const fetchedProducts = response.data || [];
 
-            // Ascending sort sa ID: Para sa pinakababa/dulo mapunta ang bagong add
             const sortedProducts = [...fetchedProducts].sort(
                 (a, b) => Number(a.id) - Number(b.id)
             );
@@ -39,6 +38,9 @@ function Products({ onLogout }) {
             await createProduct(formData);
             await loadProducts();
             setView("list");
+            if (showToast) {
+                showToast("Product added successfully!");
+            }
         } catch (err) {
             alert(err.message || "Failed to add product.");
         }
@@ -49,6 +51,9 @@ function Products({ onLogout }) {
             await updateProduct(id, formData);
             await loadProducts();
             setView("list");
+            if (showToast) {
+                showToast("Product updated successfully!");
+            }
         } catch (err) {
             alert(err.message || "Failed to update product.");
         }
@@ -58,7 +63,10 @@ function Products({ onLogout }) {
         if (window.confirm("Are you sure you want to delete this product?")) {
             try {
                 await deleteProduct(id);
-                loadProducts();
+                await loadProducts();
+                if (showToast) {
+                    showToast("Product deleted successfully!");
+                }
             } catch (err) {
                 alert(err.message || "Failed to delete product.");
             }
@@ -112,11 +120,9 @@ function Products({ onLogout }) {
     return (
         <div className="card-wrapper">
             <div className="products-card">
-                {/* Header Title */}
                 <h1 className="welcome-title">Welcome to ProductViews</h1>
                 <hr className="title-divider" />
 
-                {/* Top Action Buttons */}
                 <div className="action-bar">
                     <button className="btn-purple" onClick={() => setView("add")}>
                         + Add New Product
@@ -126,7 +132,6 @@ function Products({ onLogout }) {
                     </button>
                 </div>
 
-                {/* Table View */}
                 {products.length === 0 ? (
                     <p>No products available.</p>
                 ) : (
