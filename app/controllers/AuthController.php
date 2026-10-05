@@ -24,13 +24,6 @@ class AuthController extends Controller
         $this->call->model('UsersModel');
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | REGISTER
-    |--------------------------------------------------------------------------
-    */
-
     public function register()
     {
         $this->api->require_method('POST');
@@ -43,12 +36,6 @@ class AuthController extends Controller
         $role     = trim($input['role'] ?? 'user');
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | REQUIRED FIELDS
-        |--------------------------------------------------------------------------
-        */
-
         if ($username === '' || $email === '' || $password === '') {
             $this->api->respond_error(
                 'Username, email and password are required.',
@@ -56,12 +43,6 @@ class AuthController extends Controller
             );
         }
 
-
-        /*
-        |--------------------------------------------------------------------------
-        | EMAIL
-        |--------------------------------------------------------------------------
-        */
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->api->respond_error(
@@ -71,12 +52,6 @@ class AuthController extends Controller
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | PASSWORD
-        |--------------------------------------------------------------------------
-        */
-
         if (strlen($password) < 6) {
             $this->api->respond_error(
                 'Password must be at least 6 characters.',
@@ -85,12 +60,6 @@ class AuthController extends Controller
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | ROLE
-        |--------------------------------------------------------------------------
-        */
-
         if (!in_array($role, ['user', 'admin'], true)) {
             $this->api->respond_error(
                 'Invalid role.',
@@ -98,12 +67,6 @@ class AuthController extends Controller
             );
         }
 
-
-        /*
-        |--------------------------------------------------------------------------
-        | CHECK USERNAME
-        |--------------------------------------------------------------------------
-        */
 
         $stmt = $this->db->raw(
             'SELECT id FROM users WHERE username = ? LIMIT 1',
@@ -120,12 +83,6 @@ class AuthController extends Controller
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | CHECK EMAIL
-        |--------------------------------------------------------------------------
-        */
-
         $stmt = $this->db->raw(
             'SELECT id FROM users WHERE email = ? LIMIT 1',
             [$email]
@@ -141,20 +98,9 @@ class AuthController extends Controller
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | HASH PASSWORD
-        |--------------------------------------------------------------------------
-        */
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-
-        /*
-        |--------------------------------------------------------------------------
-        | INSERT USER
-        |--------------------------------------------------------------------------
-        */
 
         $this->db->raw(
             'INSERT INTO users (username, email, password, role, created_at)
@@ -168,11 +114,6 @@ class AuthController extends Controller
         );
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | RESPONSE
-        |--------------------------------------------------------------------------
-        */
 
         $this->api->respond(
             [
@@ -182,12 +123,6 @@ class AuthController extends Controller
         );
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | LOGIN
-    |--------------------------------------------------------------------------
-    */
 
     public function login()
     {
@@ -252,11 +187,6 @@ class AuthController extends Controller
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | LOGOUT
-    |--------------------------------------------------------------------------
-    */
 
     public function logout()
     {
@@ -280,12 +210,6 @@ class AuthController extends Controller
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | REFRESH TOKEN
-    |--------------------------------------------------------------------------
-    */
-
     public function refresh()
     {
         $this->api->require_method('POST');
@@ -306,12 +230,6 @@ class AuthController extends Controller
         $this->api->refresh_access_token($refreshToken);
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | PROFILE
-    |--------------------------------------------------------------------------
-    */
 
     public function profile()
     {

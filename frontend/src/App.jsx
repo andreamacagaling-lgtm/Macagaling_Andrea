@@ -3,50 +3,112 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Products from "./components/Products";
 
-
 function App() {
-    const [page, setPage] = useState("register");
+  // Ginawang "login" ang initial state para login page agad ang lalabas
+  const [page, setPage] = useState("login");
+  const [toast, setToast] = useState({ message: "", show: false });
 
-    const handleLogin = () => {
-        setPage("success");
+  const showToastMessage = (message) => {
+    setToast({ message, show: true });
+    setTimeout(() => {
+      setToast({ message: "", show: false });
+    }, 3000);
+  };
 
-        setTimeout(() => {
-            setPage("products");
-        }, 1500);
-    };
+  const handleLogin = () => {
+    showToastMessage("Login successful! Redirecting to products...");
+    setTimeout(() => {
+      setPage("products");
+    }, 1500);
+  };
 
-    // Logout function para bumalik sa login page
-    const handleLogout = () => {
-        setPage("login");
-    };
+  const handleLogout = () => {
+    setPage("login");
+    showToastMessage("Logged out successfully!");
+  };
 
-    return (
-        <div>
-            {page === "register" && (
-                <Register
-                    goLogin={() => setPage("login")}
-                />
-            )}
+  return (
+    <div style={{ position: "relative", minHeight: "100vh" }}>
+      {/* Floating Toast Notification Pop-up */}
+      {toast.show && (
+        <div
+          style={{
+            position: "fixed",
+            top: "20px",
+            right: "20px",
+            backgroundColor: "#ffffff",
+            color: "#333333",
+            padding: "12px 18px",
+            borderRadius: "8px",
+            boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.15)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            minWidth: "280px",
+            fontFamily: "sans-serif",
+            borderLeft: "4px solid #10b981",
+          }}
+        >
+          {/* Green Check Circle */}
+          <div
+            style={{
+              backgroundColor: "#10b981",
+              color: "#ffffff",
+              width: "22px",
+              height: "22px",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "12px",
+              fontWeight: "bold",
+              flexShrink: 0,
+            }}
+          >
+            ✓
+          </div>
 
-            {page === "login" && (
-                <Login
-                    onLogin={handleLogin}
-                    goRegister={() => setPage("register")}
-                />
-            )}
+          {/* Toast Text Message */}
+          <span style={{ fontSize: "14px", fontWeight: "500", flexGrow: 1 }}>
+            {toast.message}
+          </span>
 
-            {page === "success" && (
-                <div className="success-container">
-                    <h1>Login successful!</h1>
-                    <p>Redirecting to products...</p>
-                </div>
-            )}
-
-            {page === "products" && (
-                <Products onLogout={handleLogout} />
-            )}
+          {/* Close (X) Button */}
+          <button
+            onClick={() => setToast({ ...toast, show: false })}
+            style={{
+              background: "none",
+              border: "none",
+              fontSize: "16px",
+              color: "#aaa",
+              cursor: "pointer",
+              padding: "0 4px",
+              lineHeight: "1",
+            }}
+          >
+            ✕
+          </button>
         </div>
-    );
+      )}
+
+      {/* Pages */}
+      {page === "register" && (
+        <Register goLogin={() => setPage("login")} />
+      )}
+
+      {page === "login" && (
+        <Login
+          onLogin={handleLogin}
+          goRegister={() => setPage("register")}
+        />
+      )}
+
+      {page === "products" && (
+        <Products onLogout={handleLogout} />
+      )}
+    </div>
+  );
 }
 
 export default App;

@@ -19,9 +19,6 @@ class UsersModel extends Model
         parent::__construct();
     }
 
-    /**
-     * Find user by username
-     */
     public function findByUsername($username)
     {
         $stmt = $this->db->raw(
@@ -35,9 +32,6 @@ class UsersModel extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    /**
-     * Find user by email
-     */
     public function findByEmail($email)
     {
         $stmt = $this->db->raw(
@@ -51,9 +45,6 @@ class UsersModel extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    /**
-     * Check if username already exists
-     */
     public function usernameExists($username)
     {
         $stmt = $this->db->raw(
@@ -67,9 +58,6 @@ class UsersModel extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
     }
 
-    /**
-     * Check if email already exists
-     */
     public function emailExists($email)
     {
         $stmt = $this->db->raw(
@@ -83,9 +71,6 @@ class UsersModel extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
     }
 
-    /**
-     * Create new user
-     */
     public function createUser($data)
     {
         $stmt = $this->db->raw(
@@ -104,9 +89,6 @@ class UsersModel extends Model
         return $this->db->last_insert_id();
     }
 
-    /**
-     * Find user by ID
-     */
     public function findById($id)
     {
         $stmt = $this->db->raw(

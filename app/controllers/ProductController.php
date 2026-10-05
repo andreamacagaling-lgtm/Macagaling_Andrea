@@ -14,13 +14,6 @@ class ProductController extends Controller
         $this->call->model('ProductModel');
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | GET ALL PRODUCTS
-    |--------------------------------------------------------------------------
-    */
-
     public function products()
     {
         $this->api->require_method('GET');
@@ -36,12 +29,6 @@ class ProductController extends Controller
         ]);
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | GET SINGLE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function product($id)
     {
@@ -66,13 +53,6 @@ class ProductController extends Controller
             'data'    => $product
         ]);
     }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | CREATE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function createProduct()
     {
@@ -146,13 +126,6 @@ class ProductController extends Controller
             'id'      => $id
         ], 201);
     }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | UPDATE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function updateProduct($id)
     {
@@ -236,13 +209,6 @@ class ProductController extends Controller
             'message' => 'Product updated successfully.'
         ]);
     }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | DELETE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function deleteProduct($id)
     {

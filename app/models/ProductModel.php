@@ -29,12 +29,6 @@ class ProductModel extends Model {
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | GET SINGLE PRODUCT
-    |--------------------------------------------------------------------------
-    */
-
     public function getById($id)
     {
         $stmt = $this->db->raw(
@@ -48,12 +42,6 @@ class ProductModel extends Model {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | CREATE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function create($data)
     {
@@ -73,12 +61,6 @@ class ProductModel extends Model {
         return $this->db->last_insert_id();
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | UPDATE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function updateProduct($id, $data)
     {
@@ -100,13 +82,6 @@ class ProductModel extends Model {
 
         return $stmt->rowCount();
     }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | DELETE PRODUCT
-    |--------------------------------------------------------------------------
-    */
 
     public function deleteProduct($id)
     {

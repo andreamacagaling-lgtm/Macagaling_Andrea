@@ -1,5 +1,3 @@
-/* Container Background */
-/* Center Container for Auth Pages */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -8,7 +6,6 @@
     padding: 20px;
 }
 
-/* Card Container */
 .auth-card {
     background: #ffffff;
     width: 100%;
@@ -22,7 +19,6 @@
     box-sizing: border-box;
 }
 
-/* Header Styling */
 .auth-card h1 {
     color: #5b1399;
     font-size: 26px;
@@ -31,7 +27,6 @@
     text-align: center;
 }
 
-/* Input & Select Styling */
 .auth-card input,
 .auth-card select {
     width: 100%;
@@ -53,7 +48,6 @@
     box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
 }
 
-/* Primary Action Button */
 .auth-card button[type="submit"] {
     background-color: #6b21a8;
     color: white;
@@ -71,7 +65,6 @@
     background-color: #581c87;
 }
 
-/* Switch Text & Links */
 .switch-text {
     font-size: 14px;
     color: #4b5563;
@@ -92,7 +85,6 @@
     color: #581c87;
 }
 
-/* Alerts */
 .error {
     color: #dc2626;
     background-color: #fef2f2;
@@ -128,7 +120,6 @@ body {
     padding: 30px 10px;
 }
 
-/* White Outer Card Container */
 .products-card {
     background: #ffffff;
     width: 100%;
@@ -138,7 +129,6 @@ body {
     box-shadow: 0 10px 30px rgba(110, 40, 160, 0.08);
 }
 
-/* Title Styling */
 .welcome-title {
     color: #5b1399;
     font-size: 28px;
@@ -153,7 +143,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Action Bar */
 .action-bar {
     display: flex;
     gap: 12px;
@@ -192,7 +181,6 @@ body {
     background-color: #f3e8ff;
 }
 
-/* Table Styling */
 .table-container {
     overflow-x: auto;
 }
@@ -205,7 +193,6 @@ body {
     font-size: 14px;
 }
 
-/* Table Header */
 .custom-table thead tr {
     background-color: #6b21a8;
     color: #ffffff;
@@ -226,7 +213,6 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-/* Table Rows & Alternating Colors */
 .custom-table tbody tr {
     transition: background-color 0.15s;
 }
@@ -249,7 +235,6 @@ body {
     font-weight: 600;
 }
 
-/* Action Links (Edit / Delete) */
 .action-links {
     display: flex;
     gap: 12px;
@@ -284,9 +269,8 @@ body {
     text-decoration: underline;
 }
 
-/* Form Container Specifics */
 .form-card {
-    max-width: 600px; /* Mas pino ang laki para sa input form */
+    max-width: 600px; 
 }
 
 .product-form {
@@ -308,7 +292,6 @@ body {
     color: #4a154b;
 }
 
-/* Inputs & Textarea Styling */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -330,7 +313,6 @@ body {
     box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
 }
 
-/* Form Action Buttons */
 .form-actions {
     display: flex;
     justify-content: flex-start;
@@ -354,7 +336,6 @@ body {
     background-color: #e5e7eb;
 }
 
-/* Shared Form Card Container */
 .card-wrapper {
     display: flex;
     justify-content: center;
@@ -384,7 +365,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Vertical Form Group Alignment */
 .product-form {
     display: flex;
     flex-direction: column;
@@ -424,7 +404,6 @@ body {
     box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
 }
 
-/* Form Action Buttons */
 .form-actions {
     display: flex;
     justify-content: flex-start;

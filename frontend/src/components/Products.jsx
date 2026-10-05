@@ -8,7 +8,6 @@ function Products({ onLogout }) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    // View State: "list" | "add" | "edit"
     const [view, setView] = useState("list");
     const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -35,7 +34,6 @@ function Products({ onLogout }) {
         }
     };
 
-    // Handle Add Product
     const handleAddProduct = async (formData) => {
         try {
             await createProduct(formData);
@@ -46,7 +44,6 @@ function Products({ onLogout }) {
         }
     };
 
-    // Handle Edit Product
     const handleUpdateProduct = async (id, formData) => {
         try {
             await updateProduct(id, formData);
@@ -57,7 +54,6 @@ function Products({ onLogout }) {
         }
     };
 
-    // Handle Delete Product
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             try {
