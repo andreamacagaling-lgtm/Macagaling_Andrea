@@ -32,7 +32,7 @@ class Create_users_table {
                 ],
                 'email' => [
                     'type'       => 'VARCHAR',
-                    'constraint' => 255,
+                    'constraint' => 191,
                     'null'       => FALSE,
                     'unique'     => TRUE,
                 ],
