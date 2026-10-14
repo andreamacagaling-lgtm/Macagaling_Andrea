@@ -120,7 +120,7 @@ function Products({ onLogout, showToast }) {
     return (
         <div className="card-wrapper">
             <div className="products-card">
-                <h1 className="welcome-title">Welcome to ProductViews</h1>
+                <h1 className="welcome-title">Welcome to Product List</h1>
                 <hr className="title-divider" />
 
                 <div className="action-bar">
